@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splitup/theme/app_colors.dart';
 import 'package:splitup/pages/home.dart';
 
 void main() {
@@ -13,7 +14,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Poppins'),
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 0, 255, 255),
+        ),
+        scaffoldBackgroundColor: AppColors.background,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          foregroundColor: Colors.black,
+          elevation: 0.0,
+        ),
+      ),
       home: const HomePage(),
     );
   }

@@ -37,23 +37,31 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        backgroundColor: Colors.green,
+        // backgroundColor: Colors.green,
         elevation: 0,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20, top: 10),
-            child: Row(
-              children: const [
-                Text(
-                  'Patryk',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(20),
+              onTap: () {
+                setState(() {
+                  _index = 0; // przejście do Profilu
+                });
+              },
+              child: Row(
+                children: const [
+                  Text(
+                    'Patryk',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                SizedBox(width: 8),
-                CircleAvatar(radius: 16, child: Icon(Icons.person, size: 18)),
-              ],
+                  SizedBox(width: 8),
+                  CircleAvatar(radius: 16, child: Icon(Icons.person, size: 18)),
+                ],
+              ),
             ),
           ),
         ],

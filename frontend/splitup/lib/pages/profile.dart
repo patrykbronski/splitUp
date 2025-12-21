@@ -13,18 +13,18 @@ class ProfilePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: const [
             _ProfileHeader(),
-            SizedBox(height: 16),
-            _SectionTitle(title: 'Ustawienia'),
-            SizedBox(height: 8),
+            SizedBox(height: 24),
+            // _SectionTitle(title: 'Ustawienia'),
+            // SizedBox(height: 8),
             _ProfileTile(
               icon: Icons.person,
               title: 'Dane konta',
-              subtitle: 'Imię, email, hasło',
+              subtitle: 'Imię, zdjęcie, nr konta/tel.',
             ),
             _ProfileTile(
               icon: Icons.info_outline,
               title: 'O aplikacji',
-              subtitle: 'Wersja i informacje',
+              subtitle: 'Dowiedz się jak działa apka',
             ),
             SizedBox(height: 16),
             _LogoutButton(),
@@ -54,31 +54,14 @@ class _ProfileHeader extends StatelessWidget {
               ),
               SizedBox(height: 4),
               Text(
-                'Zalogowany użytkownik',
+                'patrykbronski@tlen.pl',
                 style: TextStyle(color: Colors.black54),
               ),
             ],
           ),
         ),
-        const Icon(Icons.edit),
+        // const Icon(Icons.edit),
       ],
-    );
-  }
-}
-
-class _SectionTitle extends StatelessWidget {
-  final String title;
-  const _SectionTitle({required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: const TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.bold,
-        color: Colors.black54,
-      ),
     );
   }
 }
@@ -99,6 +82,8 @@ class _ProfileTile extends StatelessWidget {
     return Card(
       elevation: 0,
       margin: const EdgeInsets.only(bottom: 10),
+      clipBehavior: Clip
+          .antiAlias, //dopasowuje krawędzie efektu kliknięcia do kształtu przycisku
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: const BorderSide(color: Colors.black12),
